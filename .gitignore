@@ -1,0 +1,4 @@
+
+# Ignora la carpeta de configuración local
+/node_modules
+
