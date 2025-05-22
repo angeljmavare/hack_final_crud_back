@@ -21,11 +21,29 @@ const db = new Pool({
 
 db.connect((err) => {
     if (err) {
-      console.error('Error al conectar a la base de datos:', err);
-      return;
+        console.error('Error al conectar a la base de datos:', err);
+        return;
     }
     console.log('Conexión a la base de datos establecida');
-  });  
+
+    // Crear tabla si no existe
+    const createTableQuery = `
+        CREATE TABLE IF NOT EXISTS usuarios (
+            id SERIAL PRIMARY KEY,
+            nombre VARCHAR(100) NOT NULL,
+            edad INT NOT NULL,
+            correo VARCHAR(100) UNIQUE NOT NULL
+        );
+    `;
+
+    db.query(createTableQuery, (err, result) => {
+        if (err) {
+            console.error('Error al crear la tabla:', err);
+        } else {
+            console.log('Tabla "usuarios" verificada o creada correctamente.');
+        }
+    });
+});  
 
 app.post('/create', (req, res) => {
     const { nombre, edad, correo } = req.body;
