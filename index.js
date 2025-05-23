@@ -4,7 +4,11 @@ const { Pool } = require('pg');
 const cors = require('cors');
 const port = process.env.PORT || 3001;
 
-app.use(cors());
+app.use(cors({
+    origin: "https://hack-final-crud-front.vercel.app", // Dominio del frontend
+    methods: ["GET", "POST", "PUT", "DELETE"], // Métodos permitidos
+    allowedHeaders: ["Content-Type", "Authorization"] // Encabezados permitidos
+}));
 
 app.use(express.json());
 
