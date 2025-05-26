@@ -4,7 +4,7 @@ const { Pool } = require('pg');
 const cors = require('cors');
 const port = process.env.PORT || 3001;
 
-app.use(cors());
+app.use(cors({ origin: "*" }));
 
 app.use(express.json());
 
