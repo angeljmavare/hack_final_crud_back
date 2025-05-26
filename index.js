@@ -9,14 +9,14 @@ app.use(cors());
 app.use(express.json());
 
 const db = new Pool({
-    host: 'db-crud-usuarios-final.cj2cywk4i2hh.us-east-1.rds.amazonaws.com',
+    host: 'localhost',
     user: 'postgres',
     password: 'postgres',
-    database: 'db_crud_usuarios_final',
+    database: 'crud_usuarios_final',
     port: 5432,
-     ssl: { // Habilitar SSL para que se establezca la conexión segura con la base de datos
-         rejectUnauthorized: false
-       }
+    // ssl: { // Habilitar SSL para que se establezca la conexión segura con la base de datos
+    //     rejectUnauthorized: false
+    //   }
   });
 
 db.connect((err) => {
