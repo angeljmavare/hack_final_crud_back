@@ -14,7 +14,7 @@ const db = new Pool({
     password: 'postgres',
     database: 'crud_usuarios_final',
     port: 5432,
-    // ssl: { // Habilitar SSL para que se establezca la conexión segura con la base de datos
+     // ssl: { // Habilitar SSL para que se establezca la conexión segura con la base de datos
     //     rejectUnauthorized: false
     //   }
   });
