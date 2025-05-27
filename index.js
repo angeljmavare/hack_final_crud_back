@@ -12,7 +12,7 @@ const db = new Pool({
     host: 'db-crud-final.cj2cywk4i2hh.us-east-1.rds.amazonaws.com',
     user: 'postgres',
     password: 'postgres',
-    database: 'db-crud_final',
+    database: 'db_crud_final',
     port: 5432,
     ssl: { // Habilitar SSL para que se establezca la conexión segura con la base de datos
          rejectUnauthorized: false
